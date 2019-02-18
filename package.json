@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "ng build && electron .",
-    "electron:prod": "ng build --prod && electron ."
+    "electron:prod": "ng build --prod && electron .",
+    "rebuild": "electron-rebuild "
   },
   "private": true,
   "dependencies": {
@@ -23,8 +24,10 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@types/electron": "^1.6.10",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
+    "sequelize": "^4.42.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -37,6 +40,8 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "electron": "^2.0.5",
+    "electron-rebuild": "^1.8.4",
+    "electron-reload": "^1.4.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

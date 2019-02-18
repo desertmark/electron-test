@@ -1,8 +1,9 @@
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
-const url = require('url')
-
-let win
+const {app, BrowserWindow, ipcMain} = require('electron');
+const path = require('path');
+const url = require('url');
+// const sequelize = require('./src/db/sequelize-factory');
+// const sqlite = require('sqlite3');
+let win;
 
 function createWindow () {
   win = new BrowserWindow({width: 800, height: 600})
@@ -15,11 +16,22 @@ function createWindow () {
   }))
 
   // Open the DevTools optionally:
-  // win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   win.on('closed', () => {
     win = null
   })
+
+  // sequelize
+  //   .authenticate()
+  //   .then(() => console.log('sequelized init ok.'))
+  //   .catch(error => console.error('Error init sequelize.', error));
+  
+  ipcMain.once("mainWindowLoaded", () => {
+    win.webContents.send("db", {
+      tasks: [{name:'Mocked Task 1'}],
+    });
+  });
 }
 
 app.on('ready', createWindow)

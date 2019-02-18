@@ -9,6 +9,7 @@ import { ContactPageComponent } from 'src/app/pages/contact-page/contact-page.co
 // Others
 import { routes } from 'src/app/routes';
 import { NavComponent } from './components/nav/nav.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NavComponent } from './components/nav/nav.component';
     AppComponent,
     HomePageComponent,
     ContactPageComponent,
-    NavComponent
+    NavComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
